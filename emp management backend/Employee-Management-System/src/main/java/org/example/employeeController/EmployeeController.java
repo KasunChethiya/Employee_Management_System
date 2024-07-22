@@ -2,6 +2,7 @@ package org.example.employeeController;
 
 import lombok.RequiredArgsConstructor;
 import org.example.dto.Employee;
+import org.example.entity.EmployeeEntity;
 import org.example.service.EmployeeService;
 import org.example.service.impl.EmployeeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class EmployeeController {
 
     }
     @GetMapping("get-all")
-    public List<Employee> getAll(){
+    public List<EmployeeEntity> getAll(){
         return service.getAll();
     }
 }
