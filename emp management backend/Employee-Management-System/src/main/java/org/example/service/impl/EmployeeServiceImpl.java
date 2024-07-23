@@ -8,7 +8,6 @@ import org.example.repository.EmployeeRepository;
 import org.example.service.EmployeeService;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -55,5 +54,11 @@ public class EmployeeServiceImpl implements EmployeeService {
           return new ObjectMapper().convertValue(byId.get(), Employee.class);
       }
       return new Employee();
+    }
+
+    @Override
+    public Employee findByFirstName(String firstName) {
+        return new ObjectMapper().convertValue(repository.findByFirstName(firstName), Employee.class);
+
     }
 }
