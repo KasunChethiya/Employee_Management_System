@@ -52,7 +52,7 @@ public class EmployeeServiceImpl implements EmployeeService {
       if(repository.findById(id).isPresent()){
 
           Optional<EmployeeEntity> byId = repository.findById(id);
-          return new ObjectMapper().convertValue(byId, Employee.class);
+          return new ObjectMapper().convertValue(byId.get(), Employee.class);
       }
       return new Employee();
     }
